@@ -12,4 +12,5 @@ Examples:
 """
 def sort_by_length(lst):
     # Your code here
-
+    lst.sort(key=lambda string: len(string))
+    print(lst)
