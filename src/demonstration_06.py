@@ -15,6 +15,16 @@ Examples:
 - XO("zpzpzpp") ➞ True (Returns True if no x and o)
 - XO("zzoo") ➞ False
 """
+
 def XO(txt):
     # Your code here
+    x = 0
+    o = 0
+    txt_lower = txt.lower()
+    for char in txt_lower:
+        if char == 'x':
+            x += 1
+        if char == 'o':
+            o += 1     
+    return x == o
 
