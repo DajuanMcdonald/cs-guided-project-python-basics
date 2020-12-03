@@ -14,5 +14,24 @@ Notes:
 - There won't be any awkward decimal numbers, only 0.5 to deal with.
 """
 def get_discounts(nums, percentage):
-    # Your code here
+    if not nums:
+        return 0
+    
+    # strip the % from string : percent
+    pct = percentage.strip('%')
+    dec = int(pct) / 100
+    total = [1] * len(nums)
+
+    # base
+    for n in range(0, len(nums)):
+        # print(nums[n])
+        for i in range(n + 1):
+            total[i] = nums[i] * dec
+            if total[i] % 1 == 0.5:
+                total[i] = total[i]
+
+            else:
+                total[i] = round(nums[i] * dec)
+
+    return total
 
